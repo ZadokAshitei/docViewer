@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center m-3">Second Management Interface</h1>
+  </div>
+</div>
+<a href="{{=URL('add')}}" class="m-1"><button type="button" class="btn btn-secondary"><span class="fa fa-plus">Add Document</span></button></a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Download</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+
+      <tbody>
+        {{if document:}}
+          {{for document in document:}}
+            <tr>
+              <th scope="row">{{=document.id}}</th>
+              <td>{{=document.title}}</td>
+              <td><a href="{{=URL('download',args=document.file)}}"><span class="fa fa-download fa-2x"></span></a></td>
+              <td> <div class="btn-group">
+                      <a href="" class="m-1"><button type="button" class="btn btn-secondary"><span class="fa fa-search">View</span></button></a>
+                      <a href="{{=URL('edit', args=document.id)}}" class="m-1"><button type="button" class="btn btn-secondary"><span class="fa fa-pencil">Edit</span></button></a>
+                      <a href="{{=URL('delete', args=document.id)}}" class="m-1"><button type="button" class="btn btn-secondary"><span class="fa fa-trash" >Delete</span></button></a>
+                   </div>
+              </td>
+            </tr>
+        {{pass}}
+        {{pass}}
+      </tbody>
+</table>

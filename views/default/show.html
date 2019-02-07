@@ -1,0 +1,4 @@
+{{extend 'layout.html'}}
+<h1>Document: {{=document.title}}</h1>
+
+    <a href="{{=URL('download', args=document.file)}}"> Download</a>

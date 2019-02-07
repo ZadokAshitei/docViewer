@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<form action="{{=URL('store')}}" method="post" enctype="multipart/form-data">
+  <div class="">
+    <label>Title</label>
+    <input type="text" name="title" required>
+  </div>
+  <input type="file" name="file" value="">
+  <div class="">
+    <input type="submit" value="Add Document">
+  </div>
+</form>

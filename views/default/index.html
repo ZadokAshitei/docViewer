@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>Current Documents</h1>
+
+<div class="container">
+  <div class="row">
+    {{for document in document:}}
+    <div class="col-lg-2 col-sm-6">
+        {{=A(IMG(_src='../static/images/iconfinder_12.File_290138.png' ,_width='200px', _height='200px'),
+        document.title, _href=URL("download", args=document.file), _style='display:block;', _class='text-center')}}
+    </div>
+    {{pass}}
+  </div>
+</div>

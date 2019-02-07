@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+<h1>Current Documents</h1>
+
+<div class="container">
+  <div class="row">
+    {{for document in document:}}
+    <div class="col-4">
+        {{=A(IMG(_src='../../static/images/word.png'), _href=URL('download', args=document.file))}}
+    </div>
+    {{pass}}
+  </div>
+</div>
